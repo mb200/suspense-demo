@@ -1,0 +1,215 @@
+$bg-color: #282c34;
+$heading-color: lighten($bg-color, 55);
+$text-color: lighten($bg-color, 75);
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $bg-color;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app {
+  color: $text-color;
+  padding: 50px;
+  margin: 0 auto;
+  max-width: 900px;
+
+  .movie-list-page {
+
+    .movie-list {
+      .movie-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 32px;
+        border: 1px solid lighten($bg-color, 10);
+        border-radius: 4px;
+        transition: all 150ms;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: lighten($bg-color, 5);
+          border-color: lighten($bg-color, 15);
+        }
+
+        .tomato {
+          font-size: 32px;
+          margin-right: 24px;
+          align-self: center;
+        }
+
+        .content {
+          h3 {
+            margin: 4px 0 6px;
+          }
+          span {
+            font-size: 13px;
+            color: darken($text-color, 15);
+          }
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+
+  .movie-page {
+    color: $text-color;
+
+    .movie-details {
+      display: flex;
+      flex-direction: row;
+      margin: 12px;
+
+      > :not(:last-child) {
+        margin-right: 24px;
+      }
+
+      .summary {
+        margin: 0 24px;
+
+        h1 {
+          margin-top: 4px;
+        }
+
+        .separator {
+          border-color: lighten($bg-color, 20);
+        }
+
+        .scores {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          .block {
+            .popcorn,
+            .tomato {
+              font-size: 32px;
+              margin-right: 12px;
+            }
+
+            .score {
+              font-size: 32px;
+              font-weight: 700;
+            }
+
+            &:not(:last-child) {
+              margin-right: 24px;
+            }
+          }
+        }
+      }
+
+      h5 {
+        text-transform: uppercase;
+        color: $heading-color;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .movie-reviews {
+      margin: 24px auto 0;
+
+      .movie-review {
+        display: flex;
+        flex-direction: row;
+        flex: 1 1 auto;
+        margin: 12px;
+        padding: 24px;
+        border-radius: 4px;
+        background-color: lighten($bg-color, 10);
+
+        .blurb {
+          margin-top: 0;
+          color: $text-color;
+        }
+
+        .by-line {
+          color: darken($text-color, 20);
+        }
+
+        .tomato {
+          font-size: 32px;
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+}
+
+ul {
+  text-align: left;
+  line-height: 1.7em;
+}
+
+a {
+  color: white;
+}
+
+.Spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.TopLeftAbsoluteSpinner {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  transform: scale(1.2);
+  visibility: hidden;
+  animation: 0s linear 0.5s forwards makeVisible;
+}
+
+@keyframes makeVisible {
+  to {
+    visibility: visible;
+  }
+}
+
+.BigSpinner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  font-size: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.DelayedWaitCursor {
+  animation: 0s linear 0.5s forwards makeWaiting;
+}
+
+@keyframes makeWaiting {
+  to {
+    cursor: wait;
+  }
+}
