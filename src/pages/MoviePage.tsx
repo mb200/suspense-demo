@@ -14,10 +14,10 @@ const MoviePage: React.FC = () => {
 
   return (
     <div className="movie-page">
-      <Suspense fallback={<Spinner isBig={true} />}>
+      <Suspense fallback={<Spinner />}>
         <MoviePageDetails resource={details} movieId={movieId} />
       </Suspense>
-      <Suspense fallback={<Spinner isBig={true} />}>
+      <Suspense fallback={<Spinner />}>
         <MoviePageReviews resource={reviews} movieId={movieId} />
       </Suspense>
     </div>

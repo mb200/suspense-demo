@@ -1,13 +1,13 @@
 import React from "react";
 
 const Spinner: React.FC<Props> = ({ isBig }) => {
-  let className = "";
+  let className = "spinner-container";
   if (isBig) {
-    className += " BigSpinner";
+    className += " big";
   }
   return (
     <span aria-busy="true" className={className}>
-      <span className="Spinner" aria-hidden="true">
+      <span className="spinner" aria-hidden="true">
         🌀
       </span>
     </span>
