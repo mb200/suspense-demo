@@ -1,5 +1,5 @@
 import { createResource } from "../cache/ReactCache";
-import { fetchMovieDetails, fetchMovieReviews } from "../api";
+import { fetchMovieDetails, fetchMovieReviews } from "../api/clients";
 
 function prepareMoviePage() {
   return {
