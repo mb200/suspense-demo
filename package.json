@@ -26,6 +26,12 @@
     "scheduler": "0.0.0-experimental-33c3af284",
     "typescript": "^4.0.3"
   },
+  "resolutions": {
+    "react-scripts/webpack/**/serialize-javascript": "^3.1.0",
+    "react-scripts/webpack/**/elliptic": "^6.5.3",
+    "react-scripts/webpack-dev-server/**/http-proxy": "^1.18.1",
+    "react-scripts/webpack-dev-server/**/selfsigned": "^1.10.8"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
