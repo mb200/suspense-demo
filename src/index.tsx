@@ -1,8 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import App from "./App";
+import { App } from "./App";
+import { BrowserRouter } from "react-router-dom";
 
 // Opt into Concurrent Mode (experimental) 🤘
-// @ts-ignore
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+ReactDOM.unstable_createRoot(
+  document.getElementById("root") as HTMLElement
+).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);

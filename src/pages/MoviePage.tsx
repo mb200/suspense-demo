@@ -10,7 +10,7 @@ import { Spinner } from "../components/Spinner";
 const { details, reviews } = prepareMoviePage();
 
 const MoviePage: React.FC = () => {
-  const { movieId } = useParams<{ movieId: string }>();
+  const { movieId } = useParams();
 
   return (
     <div className="movie-page">
